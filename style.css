@@ -1,0 +1,317 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+header {
+    background-color: #006064;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+}
+
+.header_navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.header_navbar ul li a {
+    text-decoration: none;
+    padding: 20px;
+    font-size: 20px;
+    color: black;
+    font-weight: 500;
+    transition: all .5s;
+}
+
+.header_navbar ul li a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.header_info {
+    display: flex;
+
+}
+
+.header_info>a {
+    color: black;
+}
+
+.header_info>a:hover {
+    color: white;
+}
+
+.header_info i {
+    font-size: 25px;
+    margin: 15px;
+    padding: 5px;
+    transition: all .3s;
+}
+
+.header_info i:hover {
+    color: white;
+}
+
+.cart {
+    position: relative;
+}
+
+.cart>p {
+    position: absolute;
+    right: 6px;
+    top: 8px;
+    width: 18px;
+    height: 18px;
+    background-color: rgb(3, 78, 34);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 13px;
+}
+
+.header_account {
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+.header_account i {
+    margin: 0;
+}
+
+.header_account:hover {
+    color: white;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+
+#hero {
+    background-image: url('assets/images/xedap.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 120px 0;
+    text-align: center;
+    background-color: #0097A7;
+}
+
+#hero h2 {
+    font-size: 36px;
+    margin: 0 0 20px;
+}
+
+#hero p {
+    font-size: 18px;
+    margin: 0 0 30px;
+    color: #004D40;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+#hero button {
+    padding: 15px 30px;
+    background-color: #004D40;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#hero button:hover {
+    background-color: #00796B;
+}
+
+section {
+    padding: 50px 0;
+}
+
+section h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #006064;
+
+}
+
+section p {
+    font-size: 18px;
+    text-align: center;
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    color: #004D40;
+    font-size: 40px;
+}
+
+.products {
+    display: flex;
+    width: 80%;
+    position: relative;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 60px;
+    flex-wrap: wrap;
+    margin: 80px auto;
+}
+
+.product-item {
+    width: 350px;
+    height: 600px;
+    padding: 15px;
+    box-shadow: 7px 4px 15px 2px #004D40;
+    /* rgba(0, 0, 0, 0.4) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.product-item img {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+}
+
+.product-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.product-info h3 {
+    font-size: 25px;
+}
+
+.product-info a {
+    text-decoration: none;
+    width: 90%;
+    background-color: #004D40;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    margin: 15px auto;
+    font-weight: 500;
+    
+}
+
+.product-info a:hover {
+    background-color: #00796B;
+}
+
+
+/* footer */
+footer {
+    background-color: #006064;
+    color: white;
+    padding: 30px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-container div {
+    flex: 1;
+    padding: 10px;
+    min-width: 200px;
+}
+
+.footer-about,
+.footer-links,
+.footer-contact,
+.footer-social {
+    margin-bottom: 20px;
+}
+
+.footer-about h3,
+.footer-links h3,
+.footer-contact h3,
+.footer-social h3 i {
+    font-size: 20px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid black;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-about p,
+.footer-contact p,
+.footer-bottom p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-social a {
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+    background-color: #073739;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.footer-social a:hover {
+    background-color: rgb(24, 6, 6);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #222;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+
+

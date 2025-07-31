@@ -1,0 +1,61 @@
+/* Cài đặt mặc định */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f2f2; /* Thêm màu nền cho trang */
+    font-family: 'Roboto', sans-serif;
+}
+
+.order-confirm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff; /* Thêm màu nền trắng */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ */
+    width: 40%; /* Điều chỉnh chiều rộng */
+    max-width: 600px; /* Đảm bảo không quá lớn trên màn hình lớn */
+    text-align: center;
+}
+
+.order-confirm h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.order-confirm p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+a.btn {
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #006064;
+    padding: 10px 30px;
+    color: white;
+    transition: all .3s;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block; /* Đảm bảo là khối */
+}
+
+a.btn:hover {
+    background-color: #004d4d;
+}

@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+body {
+    background-color: #e0f7fa;
+    /* Màu xanh nhạt cho nền */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.login-box {
+    background-color: #ffffff;
+    /* Nền trắng cho hộp đăng nhập */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #00796b;
+    /* Màu xanh đậm cho tiêu đề */
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    font-size: 14px;
+    color: #004d40;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #b2dfdb;
+    border-radius: 5px;
+    background-color: #f0f4f8;
+}
+
+.input-group input:focus {
+    border-color: #00796b;
+
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #00796b;
+    /* Màu xanh cho nút đăng nhập */
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #004d40;
+    /* Màu xanh đậm hơn khi hover */
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.signup-link a {
+    color: #00796b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}

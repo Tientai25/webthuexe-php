@@ -1,0 +1,134 @@
+* {
+    padding: o;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.cart-container {
+    width: 80%;
+    margin: 80px auto;
+}
+
+.cart-part {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.cart-image {
+    width: 20%;
+}
+
+.cart-image img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+.cart-desc {
+    font-size: 20px;
+    text-align: center;
+}
+
+.cart-quantity {
+    width: 20%;
+    text-align: center;
+}
+
+.cart-quantity input {
+    padding: 5px 10px;
+    width: 120px;
+    font-size: 15px;
+}
+
+.cart-price {
+    text-align: center;
+    width: 15%;
+}
+
+.cart-total {
+    text-align: center;
+    width: 15%;
+}
+
+.cart-remove {
+    width: 10%;
+
+}
+
+.cart-remove button {
+    cursor: pointer;
+    background-color: #006064;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.cart-summary {
+    margin-right: 200px;
+    margin-bottom: 50px;
+}
+
+.product-total {
+    text-align: right;
+    margin: 20px 0;
+    /* font-size: 30px; */
+}
+
+.product-checkout {
+    text-align: right;
+    margin: 20px 0;
+}
+
+.product-checkout a {
+    display: inline-block;
+    width: 130px;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #006064;
+    padding: 10px 20px;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.removeAll {
+    background-color: #006064;
+    display: block;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 130px;
+    padding: 10px 20px;
+    font-size: 15px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.cart-empty {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;  
+    justify-content: center !important; 
+    height: 100vh !important; 
+    text-align: center !important;
+    font-size: 20px !important;
+}
+
+.HomeBtn {
+    cursor: pointer !important;
+    border: none !important;
+    background-color: #006064 !important;
+    color: white !important;
+    padding: 10px 50px !important;
+    margin-top: 20px !important;
+    border-radius: 5px !important;
+    text-decoration: none !important;
+    transition: background-color 0.3s !important;
+}
+
+.HomeBtn:hover {
+    background-color: #004d4d !important;
+}

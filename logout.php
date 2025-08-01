@@ -6,5 +6,5 @@
         unset($_SESSION['mySession']);
     }
 
-    header("location:login.php");
+    header("location:../webthuexe-php/login.php");
 ?>

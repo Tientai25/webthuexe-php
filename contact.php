@@ -48,7 +48,7 @@
                 <p><strong>Company Name:</strong> ANH HAO BICYCLE</p>
                 <p><strong>Address:</strong> Thanh Xuân, Hà Nội</p>
                 <p><strong>Phone:</strong> 0123-456-789</p>
-                <p><strong>Email:</strong> anhhao@thuexedap.com</p>
+                <p><strong>Email:</strong> webbike@thuexedap.com</p>
 
                 <h3>Follow us:</h3>
                 <div class="social-links">

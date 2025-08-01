@@ -189,7 +189,7 @@ if (isset($_GET['action']) && $_GET['action'] == "clear") {
             <div class="footer-contact">
                 <h3>Liên Hệ</h3>
                 <p>Địa chỉ: Thanh Xuân, Hà Nội</p>
-                <p>Email: anhhao@thuexedap.com</p>
+                <p>Email: webbike@thuexedap.com</p>
                 <p>Điện thoại: 0123-456-789</p>
             </div>
             <div class="footer-social">

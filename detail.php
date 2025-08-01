@@ -26,7 +26,7 @@
 <body>
     <header>
         <div class="logo">
-            <a href="#"><img src="assets/images/logo.png" alt="logo"></a>
+            <a href="#"><img src="assets/images/main-logo.jpg" alt="logo"></a>
         </div>
 
         <nav class="header_navbar"> 
@@ -45,7 +45,7 @@
         </nav>
 
         <div class="header_info">
-            <a href="user.php"><i class="fa-solid fa-plus">123</i></a>
+            <a href="user.php"><i class="fa-solid fa-plus"></i></a>
             <a class="cart" href="cart.php">
                 <!-- <p class="cart-item">0</p> -->
                 <i class="fa fa-shopping-bag"></i>
@@ -144,7 +144,7 @@
             <div class="footer-contact">
                 <h3>Liên Hệ</h3>
                 <p>Địa chỉ: Thanh Xuân, Hà Nội</p>
-                <p>Email: anhhao@thuexedap.com</p>
+                <p>Email: webbike@thuexedap.com</p>
                 <p>Điện thoại: 0123-456-789</p>
             </div>
             <div class="footer-social">

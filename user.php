@@ -8,13 +8,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Management</title>
+    <title>Quản lý người dùng</title>
     <link rel="stylesheet" href="user.css">
 </head>
 
 <body>
     <div class="container">
-        <h1>User Management</h1>
+        <h1>Quản lý người dùng</h1>
         <table id="userTable">
             <thead>
                 <tr>
@@ -61,7 +61,7 @@
                 ?>
             </tbody>
         </table>
-        <button class="home-button"><a href="index.php" style="color:white;text-decoration:none;">Trang Chủ</a></button>
+        <button class="home-button"><a href="index.php" style="color:white;text-decoration:none; ">Trang Chủ</a></button>
     </div>
    
 </body>                  

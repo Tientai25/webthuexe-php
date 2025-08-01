@@ -78,7 +78,7 @@ if (isset($_GET['this_id'])) {
                 </select>
             </div>
             
-            <button type="submit" name="btn">Edit</button>
+            <button type="submit" name="btn">Chỉnh sửa</button>
         </form>
     </div>
 </body>

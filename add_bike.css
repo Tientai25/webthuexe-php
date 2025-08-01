@@ -2,69 +2,124 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', Arial, sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #e0f7fa;
-    color: #00796b;
+    background: linear-gradient(135deg, #e0f7fa 0%, #b2dfdb 100%);
+    color: #004d40;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
 .container {
     width: 100%;
     max-width: 600px;
-    margin: 50px auto;
     background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-4px);
 }
 
 h1 {
     text-align: center;
     color: #00796b;
+    font-size: 26px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+h1::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background: #00e676;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 label {
     display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #00796b;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #004d40;
+    font-size: 15px;
 }
 
 input[type="text"],
 input[type="number"],
 select {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #00796b;
-    border-radius: 4px;
-    font-size: 16px;
+    padding: 12px;
+    border: 1px solid #b2dfdb;
+    border-radius: 8px;
+    background-color: #f0f4f8;
+    font-size: 15px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-input[type="text"]:focus,
-input[type="number"]:focus,
+input:focus,
 select:focus {
-    border-color: #00796b;
+    border-color: #00e676;
+    box-shadow: 0 0 6px rgba(0, 230, 118, 0.3);
     outline: none;
 }
 
 button {
     width: 100%;
-    padding: 10px;
-    background-color: #00796b;
+    padding: 12px;
+    background: linear-gradient(135deg, #00796b 0%, #004d40 100%);
     color: #ffffff;
     border: none;
-    border-radius: 4px;
-    font-size: 18px;
+    border-radius: 50px;
+    font-size: 17px;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 button:hover {
-    background-color: #00796b;
+    background: linear-gradient(135deg, #004d40 0%, #00796b 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .container {
+        padding: 25px 20px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    input,
+    select,
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
 }

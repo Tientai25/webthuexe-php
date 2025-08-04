@@ -4,8 +4,12 @@ include("connect.php");
 if (isset($_GET['this_id'])) {
     $this_id = $_GET['this_id'];
 
-    $sql = "SELECT * FROM users WHERE id=" . $this_id;
-    $query = mysqli_query($conn, $sql); 
+    // Sử dụng prepared statement để lấy dữ liệu người dùng
+    $sql = "SELECT * FROM users WHERE id = ?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "i", $this_id);
+    mysqli_stmt_execute($stmt);
+    $query = mysqli_stmt_get_result($stmt);
     $row = mysqli_fetch_assoc($query);
 
     if (!$row) {
@@ -20,16 +24,18 @@ if (isset($_GET['this_id'])) {
         $cfpassword = $_POST['cfpassword'];       
         $role = $_POST['role'];
 
-        $sql = "UPDATE users SET username='$username', email='$email', password='$password', cfpassword='$cfpassword',
-                role='$role' WHERE id=" . $this_id;
-        mysqli_query($conn, $sql); 
+        // Sử dụng prepared statement để cập nhật dữ liệu
+        $sql = "UPDATE users SET username = ?, email = ?, password = ?, cfpassword = ?, role = ? WHERE id = ?";
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt, "sssssi", $username, $email, $password, $cfpassword, $role, $this_id);
+        mysqli_stmt_execute($stmt);
+
         header("location:user.php");
-        exit(); 
+        exit();
     }
 } else {
-   
     header("location:user.php"); 
-    exit(); // Kết thúc script
+    exit();
 }
 ?>
 
@@ -44,32 +50,32 @@ if (isset($_GET['this_id'])) {
 <body>
     <div class="container">
         <h1>Sửa người dùng</h1>
-        <form action="edit-user.php?this_id=<?php echo $this_id; ?>" method="post" enctype="multipart/form-data">
+        <form action="edit-user.php?this_id=<?php echo htmlspecialchars($this_id); ?>" method="post" enctype="multipart/form-data">
             <div>
                 <label for="username">Username</label>
-                <input type="text" name="username" required>
+                <input type="text" name="username" value="<?php echo htmlspecialchars($row['username']); ?>" required>
             </div>
 
             <div>
                 <label for="email">Email</label>
-                <input type="email" name="email" required>
+                <input type="email" name="email" value="<?php echo htmlspecialchars($row['email']); ?>" required>
             </div>
 
             <div>
                 <label for="password">Password</label>
-                <input type="password" name="password" required>
+                <input type="password" name="password" value="<?php echo htmlspecialchars($row['password']); ?>" required>
             </div>
 
             <div>
                 <label for="cfpassword">Confirm Password</label>
-                <input type="password" name="cfpassword" required>
+                <input type="password" name="cfpassword" value="<?php echo htmlspecialchars($row['cfpassword']); ?>" required>
             </div>
             
             <div>
                 <label for="role">Role</label>
                 <select name="role" id="role" required>
-                    <option value="Admin">Admin</option>
-                    <option value="User">User</option>
+                    <option value="admin" <?php echo ($row['role'] == 'admin') ? 'selected' : ''; ?>>admin</option>
+                    <option value="user" <?php echo ($row['role'] == 'user') ? 'selected' : ''; ?>>user</option>
                 </select>
             </div>
             

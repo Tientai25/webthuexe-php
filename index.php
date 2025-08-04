@@ -114,7 +114,7 @@
         <?php
         $sql = "SELECT * FROM bicycles";
         $result = mysqli_query($conn, $sql);
-        $per_page = 9; // Số sản phẩm trên mỗi trang
+        $per_page = 9; 
         $total_records = mysqli_num_rows($result);
         $total_pages = ceil($total_records / $per_page);
         $current_page = isset($_GET['page']) ? $_GET['page'] : 1;

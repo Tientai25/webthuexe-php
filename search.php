@@ -57,15 +57,12 @@
 
     <section class="products">
     <?php
-    // Kiểm tra xem có từ khóa tìm kiếm được gửi từ form không
     if (isset($_GET['noidung']) && !empty($_GET['noidung'])) {
         $noidung = mysqli_real_escape_string($conn, $_GET['noidung']);
 
-        // Tạo câu truy vấn SQL để tìm kiếm sản phẩm theo từ khóa
         $sql = "SELECT * FROM bicycles WHERE title LIKE '%$noidung%'";
         $result = mysqli_query($conn, $sql);
 
-        // Kiểm tra xem có sản phẩm nào phù hợp không
         if ($result && mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_array($result)) {
             ?>
@@ -90,7 +87,7 @@
         }
     } else {
         echo "<p>Vui lòng nhập từ khóa để tìm kiếm sản phẩm.</p>";
-        // header("location:index.php");
+   
     } ?>
     
     </section>

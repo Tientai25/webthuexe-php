@@ -1,7 +1,6 @@
 <?php
         include "connect.php";
 
-        //Bắt đầu phiên làm việc
          session_start();
 
         if(isset($_SESSION['mySession'])){
@@ -12,26 +11,22 @@
             $username = mysqli_real_escape_string($conn, $_POST['username']);
             $password = mysqli_real_escape_string($conn, $_POST['password']);
             
-            // Truy vấn để lấy thông tin người dùng từ cơ sở dữ liệu
             $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
             $result = mysqli_query($conn, $sql);
             
             if (mysqli_num_rows($result) == 1) {
                 $row = mysqli_fetch_assoc($result);
     
-                // Lưu thông tin cần thiết vào session
-                $_SESSION['user_id'] = $row['id']; // ID của người dùng
-                $_SESSION['username'] = $row['username']; // Tên người dùng
-                $_SESSION['avatar'] = $row['avatar']; // Đường dẫn tới avatar (avatar là tên cột chứa đường dẫn ảnh trong CSDL)
-                $_SESSION['role'] = $row['role']; // Vai trò của người dùng (admin hoặc user)
+                $_SESSION['user_id'] = $row['id']; 
+                $_SESSION['username'] = $row['username']; 
+                $_SESSION['avatar'] = $row['avatar']; 
+                $_SESSION['role'] = $row['role']; 
     
-                // Thiết lập mySession để xác nhận đăng nhập
                 $_SESSION['mySession'] = $username;
     
-                // Điều hướng tới trang index sau khi đăng nhập thành công
                 header("Location: index.php");
                 echo "<script>alert('Username or password correct!');</script>";
-                exit(); // Dừng script sau khi chuyển hướng
+                exit(); 
             } else {
                 echo "<script>alert('Username or password incorrect!');</script>";
             }

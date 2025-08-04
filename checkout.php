@@ -2,32 +2,29 @@
 session_start();
 include "connect.php";
 
-// Kiểm tra nếu giỏ hàng không trống
 if (empty($_SESSION['cart'])) {
     header("Location: cart.php");
     exit;
 }
 
-// Xử lý khi biểu mẫu được gửi
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
     $phone = $_POST['phone'];
     $address = $_POST['address'];
-    
-    // Kiểm tra dữ liệu đầu vào
+
     if (empty($name) || empty($phone) || empty($address)) {
         $error = "Vui lòng điền đầy đủ thông tin.";
     } else {
-        // Bắt đầu giao dịch
+
         $conn->begin_transaction();
         try {
-            // Lưu thông tin đơn hàng vào bảng orders
+        
             $stmt = $conn->prepare("INSERT INTO orders (customer_name, customer_phone, customer_address, order_date) VALUES (?, ?, ?, NOW())");
             $stmt->bind_param("sss", $name, $phone, $address);
             $stmt->execute();
-            $order_id = $conn->insert_id; // Lấy ID của đơn hàng vừa tạo
+            $order_id = $conn->insert_id;
 
-            // Lưu chi tiết đơn hàng và cập nhật số lượng xe đạp
+          
             foreach ($_SESSION['cart'] as $item) {
                 $bike_id = intval($item['id']);
                 $quantity_ordered = intval($item['quantity']);
@@ -44,13 +41,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $current_quantity = $row['quantity'];
                     
                     if ($current_quantity >= $quantity_ordered) {
-                        // Cập nhật số lượng xe đạp
+                       
                         $updated_quantity = $current_quantity - $quantity_ordered;
                         $update_stmt = $conn->prepare("UPDATE bicycles SET quantity = ? WHERE id = ?");
                         $update_stmt->bind_param("ii", $updated_quantity, $bike_id);
                         $update_stmt->execute();
 
-                        // Lưu chi tiết đơn hàng
                         $detail_stmt = $conn->prepare("INSERT INTO order_details (order_id, bike_id, quantity, price) VALUES (?, ?, ?, ?)");
                         $detail_stmt->bind_param("iiid", $order_id, $bike_id, $quantity_ordered, $price);
                         $detail_stmt->execute();
@@ -62,13 +58,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 }
             }
 
-            // Xác nhận giao dịch
             $conn->commit();
             
-            // Xóa giỏ hàng
+           
             unset($_SESSION['cart']);
             
-            // Chuyển hướng đến trang xác nhận
+          
             header("Location: order_confirmation.php");
             exit;
         } catch (Exception $e) {
@@ -184,7 +179,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <p class="error"><?php echo htmlspecialchars($error); ?></p>
         <?php endif; ?>
 
-        <!-- Hiển thị danh sách xe đạp trong giỏ hàng -->
         <h2>Thông tin xe đạp thuê</h2>
         <table class="cart-table">
             <thead>
@@ -215,7 +209,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </table>
         <p class="total">Tổng tiền: <?php echo number_format($total); ?> VND</p>
 
-        <!-- Biểu mẫu điền thông tin khách hàng -->
         <h2>Thông tin khách hàng</h2>
         <form class="checkout-form" method="POST">
             <label for="name">Họ và tên:</label>

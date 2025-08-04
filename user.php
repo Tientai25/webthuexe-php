@@ -30,21 +30,20 @@
             </thead>
             <tbody>
             <?php
-                    // Truy vấn để lấy tất cả người dùng
+               
                     $sql = "SELECT * FROM users";
                     $result = mysqli_query($conn, $sql);
-                    
-                    // Kiểm tra xem có kết quả không
+                   
                     if (mysqli_num_rows($result) > 0) {
-                        // Duyệt qua từng bản ghi
+            
                         while ($row = mysqli_fetch_assoc($result)) {
                             echo "<tr>";
-                            echo "<td>" . $row['id'] . "</td>"; // ID
-                            echo "<td>" . $row['username'] . "</td>"; // Username
-                            echo "<td>" . $row['email'] . "</td>"; // Email
-                            echo "<td>" . $row['password'] . "</td>"; // Password
-                            echo "<td>" . $row['cfpassword'] . "</td>"; // Cfpassword                           
-                            echo "<td>" . $row['role'] . "</td>"; // Role
+                            echo "<td>" . $row['id'] . "</td>"; 
+                            echo "<td>" . $row['username'] . "</td>"; 
+                            echo "<td>" . $row['email'] . "</td>"; 
+                            echo "<td>" . $row['password'] . "</td>"; 
+                            echo "<td>" . $row['cfpassword'] . "</td>";                         
+                            echo "<td>" . $row['role'] . "</td>"; 
                             echo "<td class='admin-actions'>
                                     <button class='edit'>
                                         <a href='edit-user.php?this_id=" . $row['id'] . "' style='color: white; text-decoration: none;'>Edit</a>
@@ -52,7 +51,7 @@
                                     <button class='delete'>
                                         <a href='delete-user.php?this_id=" . $row['id'] . "' style='color: white; text-decoration: none;'>Delete</a>
                                     </button>
-                                  </td>"; // Actions
+                                  </td>"; 
                             echo "</tr>";
                         }
                     } else {

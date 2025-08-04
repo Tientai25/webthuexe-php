@@ -1,20 +1,17 @@
 <?php
     include "connect.php";
     session_start();
-    // Không bắt buộc đăng nhập, vì index.php không kiểm tra đăng nhập ở đây
 
-    // Phân trang
-    $items_per_page = 9; // Số sản phẩm mỗi trang
-    $current_page = isset($_GET['page']) ? (int)$_GET['page'] : 1; // Trang hiện tại
+    $items_per_page = 9; 
+    $current_page = isset($_GET['page']) ? (int)$_GET['page'] : 1; 
     if ($current_page < 1) $current_page = 1;
-    $offset = ($current_page - 1) * $items_per_page; // Vị trí bắt đầu lấy dữ liệu
+    $offset = ($current_page - 1) * $items_per_page;
 
-    // Đếm tổng số sản phẩm
     $sql_count = "SELECT COUNT(*) as total FROM bicycles";
     $result_count = mysqli_query($conn, $sql_count);
     $row_count = mysqli_fetch_assoc($result_count);
     $total_items = $row_count['total'];
-    $total_pages = ceil($total_items / $items_per_page); // Tổng số trang
+    $total_pages = ceil($total_items / $items_per_page);
 ?>
 
 <!DOCTYPE html>

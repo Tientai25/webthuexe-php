@@ -47,11 +47,7 @@
                 <input type="email" id="email" name="email" required>
                 <small class="error-message" id="emailError"></small>
             </div>
-            <!-- <div class="form-group">
-                <label for="address">Address</label>
-                <input type="type" id="address" name="address" required>
-                <small class="error-message" id="emailError"></small>
-            </div> -->
+    
             <div class="form-group">
                 <label for="password">Mật khẩu</label>
                 <input type="password" id="password" name="password" placeholder="Mật khẩu phải có ít nhất 6 ký tự"
@@ -64,7 +60,7 @@
                     placeholder="Mật khẩu phải có ít nhất 6 ký tự" required>
                 <small class="error-message" id="confirmPasswordError"></small>
             </div>
-            <button type="submit" name="btn">Đăng ký</button>
+            <button type="submit" name="btn">   </button>
         </form>
         <p id="successMessage" class="success-message"></p>
     </div>

@@ -1,7 +1,8 @@
 * {
-    padding: o;
+    padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 .cart-container {
@@ -9,102 +10,119 @@
     margin: 80px auto;
 }
 
-.cart-part {
-    display: flex;
-    align-items: center;
-    margin: 20px 0;
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-.cart-image {
-    width: 20%;
-}
-
-.cart-image img {
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
-}
-
-.cart-desc {
-    font-size: 20px;
-    text-align: center;
-}
-
-.cart-quantity {
-    width: 20%;
-    text-align: center;
-}
-
-.cart-quantity input {
-    padding: 5px 10px;
-    width: 120px;
-    font-size: 15px;
-}
-
-.cart-price {
-    text-align: center;
-    width: 15%;
-}
-
-.cart-total {
-    text-align: center;
-    width: 15%;
-}
-
-.cart-remove {
-    width: 10%;
-
-}
-
-.cart-remove button {
-    cursor: pointer;
+.cart-table thead {
     background-color: #006064;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
     color: white;
 }
 
+.cart-table th,
+.cart-table td {
+    padding: 15px 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    vertical-align: middle;
+}
+
+.cart-table th {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.cart-table tbody tr:hover {
+    background-color: #f1f9f9;
+}
+
+.cart-table img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+.cart-quantity input {
+    padding: 6px 12px;
+    width: 70px;
+    font-size: 16px;
+    border: 1.5px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+    cursor: pointer;
+}
+
+.cart-quantity input:focus {
+    outline: none;
+    border-color: #006064;
+}
+
+.cart-remove a {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #006064;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.cart-remove a:hover {
+    background-color: #004d4d;
+}
+
 .cart-summary {
-    margin-right: 200px;
-    margin-bottom: 50px;
+    margin: 30px 0 60px auto;
+    width: fit-content;
+    text-align: right;
+    font-weight: 600;
 }
 
-.product-total {
-    text-align: right;
-    margin: 20px 0;
-    /* font-size: 30px; */
-}
-
-.product-checkout {
-    text-align: right;
-    margin: 20px 0;
+.product-total h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
 }
 
 .product-checkout a {
     display: inline-block;
-    width: 130px;
-    text-decoration: none;
-    border-radius: 5px;
     background-color: #006064;
-    padding: 10px 20px;
-    text-align: center;
     color: white;
-    font-size: 15px;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
     cursor: pointer;
 }
 
+.product-checkout a:hover {
+    background-color: #004d4d;
+}
+
 .removeAll {
+    display: inline-block;
     background-color: #006064;
-    display: block;
     color: white;
-    border: none;
-    border-radius: 5px;
-    width: 130px;
-    padding: 10px 20px;
-    font-size: 15px;
-    margin-left: auto;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-size: 16px;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 600;
     cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.removeAll:hover {
+    background-color: #004d4d;
 }
 
 .cart-empty {
@@ -112,9 +130,10 @@
     flex-direction: column !important;
     align-items: center !important;  
     justify-content: center !important; 
-    height: 100vh !important; 
+    height: 70vh !important; 
     text-align: center !important;
-    font-size: 20px !important;
+    font-size: 22px !important;
+    color: #555;
 }
 
 .HomeBtn {
@@ -122,10 +141,12 @@
     border: none !important;
     background-color: #006064 !important;
     color: white !important;
-    padding: 10px 50px !important;
-    margin-top: 20px !important;
-    border-radius: 5px !important;
+    padding: 12px 60px !important;
+    margin-top: 25px !important;
+    border-radius: 8px !important;
     text-decoration: none !important;
+    font-weight: 600;
+    font-size: 18px;
     transition: background-color 0.3s !important;
 }
 

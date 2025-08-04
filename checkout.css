@@ -1,61 +1,67 @@
-/* Cài đặt mặc định */
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-body {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f2f2f2; /* Thêm màu nền cho trang */
-    font-family: 'Roboto', sans-serif;
-}
-
-.order-confirm {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 20px;
-    padding: 30px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background-color: #fff; /* Thêm màu nền trắng */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ */
-    width: 40%; /* Điều chỉnh chiều rộng */
-    max-width: 600px; /* Đảm bảo không quá lớn trên màn hình lớn */
-    text-align: center;
-}
-
-.order-confirm h1 {
-    font-size: 28px;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.order-confirm p {
-    font-size: 18px;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-a.btn {
-    cursor: pointer;
-    text-decoration: none;
-    background-color: #006064;
-    padding: 10px 30px;
-    color: white;
-    transition: all .3s;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    display: inline-block; /* Đảm bảo là khối */
-}
-
-a.btn:hover {
-    background-color: #004d4d;
-}
+ body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .order-confirm {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+        .order-confirm h1 {
+            color: #28a745;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .order-confirm p {
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .order-confirm .fa-check-circle {
+            color: #28a745;
+            margin-right: 8px;
+        }
+        .order-details {
+            margin: 20px 0;
+            text-align: left;
+        }
+        .order-details h3 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .order-details ul {
+            list-style: none;
+            padding: 0;
+        }
+        .order-details li {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 8px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #006064;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #004d50;
+        }
+        .btn .fa-home {
+            margin-right: 8px;
+        }

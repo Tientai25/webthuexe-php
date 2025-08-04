@@ -18,6 +18,36 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .pagination {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .pagination a {
+            padding: 8px 12px;
+            margin: 0 5px;
+            text-decoration: none;
+            color: #006064;
+            font-weight: bold;
+            background-color: #e0f7fa;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .pagination a:hover {
+            background-color: #00e676;
+            transform: scale(1.1);
+        }
+        .pagination .active {
+            background-color: #00796b;
+            color: #fff;
+            pointer-events: none;
+        }
+        .pagination .disabled {
+            color: #ccc;
+            pointer-events: none;
+            background-color: #f0f0f0;
+        }
+    </style>
 </head>
 <body>
     <header>      
@@ -30,14 +60,15 @@
         <nav class="header_navbar"> 
             <ul>
                 <li><a href="index.php">TRANG CHỦ</a></li>
-                <li><a href="#">SẢN PHẨM</a></li>
+                <li><a href="product.php">SẢN PHẨM</a></li>
                 <li class="middle-section">
                     <form method="GET" action="search.php">
                         <input type="text" placeholder="Nhập tên sản phẩm..." class="search-input" name="noidung">
                         <button type="submit" class="search-btn">SEARCH</button>
                     </form>
                 </li>
-                <li><a href="register.php">ĐĂNG KÝ</a></li>
+                <!-- <li><a href="register.php">ĐĂNG KÝ</a></li> -->
+                 <li><a href="contact.php">LIÊN HỆ</a></li>
                 <li><a href="logout.php">ĐĂNG XUẤT</a></li>
             </ul>
         </nav>
@@ -83,6 +114,14 @@
         <?php
         $sql = "SELECT * FROM bicycles";
         $result = mysqli_query($conn, $sql);
+        $per_page = 9; // Số sản phẩm trên mỗi trang
+        $total_records = mysqli_num_rows($result);
+        $total_pages = ceil($total_records / $per_page);
+        $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
+        $start = ($current_page - 1) * $per_page;
+
+        $sql = "SELECT * FROM bicycles LIMIT $start, $per_page";
+        $result = mysqli_query($conn, $sql);
         while($row = mysqli_fetch_array($result)){
         ?>    
         <div class="product-item">          
@@ -100,6 +139,25 @@
         </div>
         <?php } ?>   
     </section>
+    <!-- Phân trang -->
+    <div class="pagination">
+        <?php if ($current_page > 1): ?>
+            <a href="?page=<?php echo $current_page - 1; ?>">&laquo; Trước</a>
+        <?php else: ?>
+            <a class="disabled">&laquo; Trước</a>
+        <?php endif; ?>
+
+        <?php for ($i = 1; $i <= $total_pages; $i++) {
+            $active_class = ($i == $current_page) ? 'active' : '';
+            echo "<a href='?page=$i' class='$active_class'>$i</a>";
+        } ?>
+
+        <?php if ($current_page < $total_pages): ?>
+            <a href="?page=<?php echo $current_page + 1; ?>">Tiếp &raquo;</a>
+        <?php else: ?>
+            <a class="disabled">Tiếp &raquo;</a>
+        <?php endif; ?>
+    </div>
     <footer>
         <div class="footer-container">
             <div class="footer-about">

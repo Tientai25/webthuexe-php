@@ -47,18 +47,15 @@
         <div class="header_info">
             <a href="user.php"><i class="fa-solid fa-plus"></i></a>
             <a class="cart" href="cart.php">
-                <!-- <p class="cart-item">0</p> -->
                 <i class="fa fa-shopping-bag"></i>
             </a>
 
             <?php if (isset($_SESSION['mySession'])): ?>
-                <!-- Nếu người dùng đã đăng nhập -->
-                <a class="header_account" href="index.php"> <!-- Link đến trang profile của user hoặc admin -->
+                <a class="header_account" href="index.php"> 
                     <!-- <img src="assets/images/<?php echo $_SESSION['img']; ?>" alt="Avatar" class="user-avatar"> -->
                     <p class="accountname"><?php echo $_SESSION['username']; ?></p>
                 </a>
             <?php else: ?>
-                <!-- Nếu người dùng chưa đăng nhập -->
                 <a class="header_account" href="login.php">
                     <i class="fa fa-user-alt"></i>
                     <p class="accountname">Đăng nhập</p>

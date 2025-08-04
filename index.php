@@ -64,7 +64,7 @@
                 <li class="middle-section">
                     <form method="GET" action="search.php">
                         <input type="text" placeholder="Nhập tên sản phẩm..." class="search-input" name="noidung">
-                        <button type="submit" class="search-btn">SEARCH</button>
+                        <button type="submit" class="search-btn">TÌM KIẾM</button>
                     </form>
                 </li>
                 <!-- <li><a href="register.php">ĐĂNG KÝ</a></li> -->

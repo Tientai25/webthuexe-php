@@ -36,10 +36,11 @@
                 <li class="middle-section">
                     <form method="GET" action="search.php">
                         <input type="text" placeholder="Nhập tên sản phẩm..." style="padding: 8px; width: 300px; border-radius: 5px;" name="noidung">
-                        <button type="submit" style="padding: 8px 16px; border-radius: 5px; color: black; text-decoration: none; font-size: 15px; border: solid black 2px;">SEARCH</button>
+                        <button type="submit" style="padding: 8px 16px; border-radius: 5px; color: black; text-decoration: none; font-size: 15px; border: solid black 2px;">TÌM KIẾM</button>
                     </form>
                 </li>
-                <li><a href="register.php">ĐĂNG KÝ</a></li>
+                <!-- <li><a href="register.php">ĐĂNG KÝ</a></li> -->
+                <li><a href="register.php">LIÊN HỆ</a></li>
                 <li><a href="logout.php">ĐĂNG XUẤT</a></li>
             </ul>
         </nav>
